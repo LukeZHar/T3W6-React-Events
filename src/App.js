@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import PokemonCard from './components/PokemonCard';
 
 export default class App extends Component {
   constructor() {
@@ -32,8 +33,17 @@ export default class App extends Component {
           }>Increase Pokemon Amount</button>
         <button onClick={ () => {
           this.decreasePokemonNumber();
-        } 
-          }>Decrease Pokemon Amount</button>
+        } }>Decrease Pokemon Amount</button>
+        {
+          // Creats an array of given length
+          Array(this.state.numberOfPokemon)
+          // Fills the array with null
+          .fill(null)
+          // Maps over the array and places the component
+          .map((element, index) => {
+            return <PokemonCard key={index}/>
+          })
+        }
       </>
     )
   }
