@@ -1,49 +1,23 @@
 body {
   display: flex;
   flex-direction: column;
-  font-family: Arial, sans-serif;
-  background-color: #f0f8ff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #eaf3ff; /* A soft, light blue background */
   margin: 0;
-  padding: 0;
+  padding: 20px; /* Added padding */
   text-align: center;
-}
-
-h1 {
-  color: #ff1493; /* Changed header color to a vibrant pink */
-}
-
-p {
-  font-size: 1.2rem;
-  color: #3b3b3b;
-}
-
-button {
-  margin: 10px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 5px;
-  border: 1px solid #4c4cff;
-  background-color: #ffffff;
-  color: #4c4cff;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #4c4cff;
-  color: #ffffff;
 }
 
 .pokemonCard {
   display: inline-block;
-  width: 150px;
+  width: 200px; /* Basic width for card */
   margin: 15px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
-  padding: 10px;
-  transition: transform 0.3s ease, z-index 0.3s ease; /* Smooth transition */
+  border: 3px solid #3B5998; /* Blue border for card */
+  border-radius: 15px; /* Rounded corners for a softer look */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for cards */
+  background: linear-gradient(145deg, #ffffff, #f0f0f0); /* Subtle gradient for depth */
+  padding: 15px; /* Added padding inside card */
+  transition: transform 0.3s ease, z-index 0.3s ease; /* Smooth transition for click effect */
   cursor: pointer;
 }
 
@@ -51,32 +25,40 @@ button:hover {
   position: fixed; /* Make the clicked card take fixed position */
   top: 50%; /* Center it vertically */
   left: 50%; /* Center it horizontally */
-  transform: translate(-50%, -50%) scale(2); /* Move it to the center and enlarge it */
+  transform: translate(-50%, -50%) scale(1.1); /* Scale effect when clicked */
   z-index: 10; /* Raise the clicked card above others */
-  width: 200px; /* Increase width */
+  width: 220px; /* Increase width on click */
   height: auto; /* Allow height to fit content */
   margin: 0; /* Remove margins */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Deeper shadow for better visibility */
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6); /* Deeper shadow for visibility */
+  background: url('../src/assets/pokemon-card.png') no-repeat center; /* Background image of a Pokémon card */
+  background-size: cover; /* Make the background cover the whole card */
 }
 
-
 .pokemonCard h1 {
-  font-size: 1rem;
-  color: #ff6347;
-  text-transform: capitalize;
+  font-size: 1.2rem; /* Adjusted title size */
+  color: black; /* Dark blue for card titles */
+  text-transform: capitalize; /* Capitalise Pokémon names */
+  margin: 0px 2px 1px 2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Soft shadow for titles */
 }
 
 .pokemonCard img {
   width: 100%; /* Responsive image */
-  height: auto;
-  border-radius: 5px;
-  cursor: pointer; /* Indicating that the image is clickable */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Slightly round corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow around images */
 }
 
 .pokemonCard p {
   margin-top: 10px;
+  color: black; 
 }
 
 .description {
-  margin-top: 10px;
+  margin: 1px; /* Space above description */
+  background-color: rgba(255, 255, 255, 0.8); /* Light background for description */
+  padding: 5px; /* Padding for description for clear separation */
+  border-radius: 5px; /* Rounded corners for description box */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 }
