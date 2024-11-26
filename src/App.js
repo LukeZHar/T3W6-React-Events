@@ -27,25 +27,20 @@ export default class App extends Component {
         <h1>Hello World!</h1>
         <p>My Pokemon Team</p>
         <h5>Number of Pokemon: {this.state.numberOfPokemon}</h5>
-        <button onClick={() => {
-          this.inceasePokemonNumber();
-        }
-        }>Increase Pokemon Amount</button>
-        <button onClick={() => {
-          this.decreasePokemonNumber();
-        }}>Decrease Pokemon Amount</button>
+        {/* Move the buttons above the cards */}
+        <div>
+          <button onClick={this.inceasePokemonNumber}>Increase Pokemon Amount</button>
+          <button onClick={this.decreasePokemonNumber}>Decrease Pokemon Amount</button>
+        </div>
         {
-          // Creats an array of given length
           Array(this.state.numberOfPokemon)
-            // Fills the array with null
             .fill(null)
-            // Maps over the array and places the component
             .map((element, index) => {
               return <PokemonCard key={index} />
             })
         }
       </>
-    )
+    );
   }
 }
 

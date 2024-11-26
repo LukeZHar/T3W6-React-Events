@@ -1,16 +1,82 @@
 body {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  background-color: antiquewhite;
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
-.App {
-  text-align: center;
+h1 {
+  color: #ff1493; /* Changed header color to a vibrant pink */
+}
+
+p {
+  font-size: 1.2rem;
+  color: #3b3b3b;
 }
 
 button {
   margin: 10px;
-  padding: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #4c4cff;
+  background-color: #ffffff;
+  color: #4c4cff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #4c4cff;
+  color: #ffffff;
+}
+
+.pokemonCard {
+  display: inline-block;
+  width: 150px;
+  margin: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 10px;
+  transition: transform 0.3s ease, z-index 0.3s ease; /* Smooth transition */
+  cursor: pointer;
+}
+
+.pokemonCard.clicked {
+  position: fixed; /* Make the clicked card take fixed position */
+  top: 50%; /* Center it vertically */
+  left: 50%; /* Center it horizontally */
+  transform: translate(-50%, -50%) scale(2); /* Move it to the center and enlarge it */
+  z-index: 10; /* Raise the clicked card above others */
+  width: 200px; /* Increase width */
+  height: auto; /* Allow height to fit content */
+  margin: 0; /* Remove margins */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Deeper shadow for better visibility */
+}
+
+
+.pokemonCard h1 {
+  font-size: 1rem;
+  color: #ff6347;
+  text-transform: capitalize;
+}
+
+.pokemonCard img {
+  width: 100%; /* Responsive image */
+  height: auto;
+  border-radius: 5px;
+  cursor: pointer; /* Indicating that the image is clickable */
+}
+
+.pokemonCard p {
+  margin-top: 10px;
+}
+
+.description {
+  margin-top: 10px;
 }
